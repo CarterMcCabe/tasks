@@ -2,39 +2,58 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test --coverage
 
-Browserslist: caniuse-lite is outdated. Please run:
-  npx browserslist@latest --update-db
-  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-Browserslist: caniuse-lite is outdated. Please run:
-  npx browserslist@latest --update-db
-  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-Browserslist: caniuse-lite is outdated. Please run:
-  npx browserslist@latest --update-db
-  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
 PASS src/functions.test.ts
-PASS src/text.test.tsx
-PASS src/HtmlCss.test.tsx
-PASS src/App.test.tsx
-----------------|---------|----------|---------|---------|-------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------|---------|----------|---------|---------|-------------------
-All files       |   99.31 |    96.72 |     100 |   99.26 |                   
- src            |   99.31 |    96.72 |     100 |   99.26 |                   
-  App.tsx       |     100 |      100 |     100 |     100 |                   
-  arrays.ts     |     100 |      100 |     100 |     100 |                   
-  functions.ts  |     100 |      100 |     100 |     100 |                   
-  nested.ts     |     100 |    95.45 |     100 |     100 | 103               
-  objects.ts    |   96.42 |    83.33 |     100 |   96.42 | 54                
- src/interfaces |       0 |        0 |       0 |       0 |                   
-  answer.ts     |       0 |        0 |       0 |       0 |                   
-  question.ts   |       0 |        0 |       0 |       0 |                   
-----------------|---------|----------|---------|---------|-------------------
+PASS src/components/StartAttempt.test.tsx
+FAIL src/components/TwoDice.test.tsx
+  ● TwoDice Component tests › Clicking right button changes second number
 
-Test Suites: 7 passed, 7 total
-Tests:       49 passed, 49 total
+    expect(jest.fn()).toBeCalledTimes(expected)
+
+    Expected number of calls: 3
+    Received number of calls: 1
+
+      64 |         rightButton.click();
+      65 |         // Then the random function should be called 3 times
+    > 66 |         expect(mathRandomFunction).toBeCalledTimes(3);
+         |                                    ^
+      67 |         // And the number to be 5
+      68 |         const rightNumber = extractDigits(screen.getByTestId("right-die"));
+      69 |         expect(rightNumber).toEqual(5);
+
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:66:36)
+
+PASS src/components/ChangeType.test.tsx
+PASS src/components/CycleHoliday.test.tsx
+PASS src/components/Counter.test.tsx
+PASS src/components/RevealAnswer.test.tsx
+PASS src/App.test.tsx
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.48 |    96.47 |     100 |   99.45 |                   
+ src               |   99.31 |    96.72 |     100 |   99.25 |                   
+  App.tsx          |     100 |      100 |     100 |     100 |                   
+  arrays.ts        |     100 |      100 |     100 |     100 |                   
+  functions.ts     |     100 |      100 |     100 |     100 |                   
+  nested.ts        |     100 |    95.45 |     100 |     100 | 103               
+  objects.ts       |   96.42 |    83.33 |     100 |   96.42 | 54                
+ src/components    |     100 |    95.83 |     100 |     100 |                   
+  ChangeType.tsx   |     100 |      100 |     100 |     100 |                   
+  Counter.tsx      |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx |     100 |      100 |     100 |     100 |                   
+  RevealAnswer.tsx |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx |     100 |       75 |     100 |     100 | 9                 
+  TwoDice.tsx      |     100 |      100 |     100 |     100 |                   
+ src/interfaces    |       0 |        0 |       0 |       0 |                   
+  answer.ts        |       0 |        0 |       0 |       0 |                   
+  question.ts      |       0 |        0 |       0 |       0 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 1 failed, 10 passed, 11 total
+Tests:       1 failed, 92 passed, 93 total
 Snapshots:   0 total
-Time:        3.957 s
+Time:        5.167 s
 Ran all test suites.
